@@ -1,0 +1,62 @@
+/* 设置背景图片样式 */
+body {
+  font-family: 'Comic Sans MS', '华文彩云', cursive; /* 设置可爱字体 */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('02.png') no-repeat center center; /* 替换为你的图片路径 */
+  background-size: cover; /* 确保背景图片填满屏幕 */
+  z-index: -1; /* 背景在内容下面 */
+}
+
+.content {
+  position: absolute; /* 改为绝对定位 */
+  top: 50%; /* 调整文字距离顶部的距离 */
+  left: 10%; /* 调整文字距离左侧的距离 */
+  transform: translate(0, -50%); /* 移除水平居中的代码 */
+  z-index: 1; /* 确保内容在背景之上 */
+  color: #5a99c6; /* 字体颜色为白色，确保可见 */
+  max-width: 600px; /* 限制文字宽度 */
+  text-align: left; /* 将文字左对齐 */
+ 
+  padding: 30px; /* 给文字增加一些内边距 */
+  border-radius: 20px; /* 可选：圆角边框 */
+}
+
+
+/* 针对手机屏幕优化背景图片显示 */
+@media screen and (max-width: 768px) {
+  .background {
+      background-size: contain; /* 小屏幕完整显示背景图片 */
+      background-attachment: scroll; /* 移动端滚动优化 */
+  }
+
+  .content {
+      padding: 15px;
+      margin-top: 20px; /* 减少顶部间距 */
+  }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

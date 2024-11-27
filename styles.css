@@ -1,6 +1,6 @@
 /* 设置背景图片样式 */
 body {
-  font-family: 'Comic Sans MS', '华文彩云', cursive; /* 设置可爱字体 */
+  font-family: 'Comic Sans MS', cursive; /* 设置可爱字体 */
   margin: 0;
   padding: 0;
   text-align: center;
@@ -12,15 +12,16 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 105%;
   background: url('02.png') no-repeat center center; /* 替换为你的图片路径 */
   background-size: cover; /* 确保背景图片填满屏幕 */
   z-index: -1; /* 背景在内容下面 */
+  background-attachment: fixed; /* 背景固定不随页面滚动 */
 }
 
 .content {
   position: absolute; /* 改为绝对定位 */
-  top: 50%; /* 调整文字距离顶部的距离 */
+  top: 11%; /* 调整文字距离顶部的距离 */
   left: 10%; /* 调整文字距离左侧的距离 */
   transform: translate(0, -50%); /* 移除水平居中的代码 */
   z-index: 1; /* 确保内容在背景之上 */
@@ -32,19 +33,45 @@ body {
   border-radius: 20px; /* 可选：圆角边框 */
 }
 
+/* 针对电脑端（大于 1024px）进行调整 */
+@media screen and (min-width: 1024px) {
+  .content {
+    font-size: 22px; /* 调整字体大小 */
+    color: #19686d; /* 字体颜色 */
+    left: 1%; /* 调整文字左对齐位置 */
+    top: 20%; /* 文字位置调至屏幕中间偏上 */
+
+  }
+}
 
 /* 针对手机屏幕优化背景图片显示 */
 @media screen and (max-width: 768px) {
   .background {
-      background-size: contain; /* 小屏幕完整显示背景图片 */
+      background-size: cover; /* 小屏幕完整显示背景图片 */
       background-attachment: scroll; /* 移动端滚动优化 */
+      
   }
 
+  
   .content {
+
       padding: 15px;
       margin-top: 20px; /* 减少顶部间距 */
   }
 }
+
+/* 针对电脑端的背景手动调整 */
+@media screen and (min-width: 769px) {
+  .background {
+    width: 1280px; /* 手动设置背景图片的宽度 */
+    height: 1000px; /* 手动设置背景图片的高度 */
+    background-size: 1280px 1000px; /* 精确设置背景大小 */
+    background-position: center top; /* 背景顶部对齐，水平居中 */
+    background-repeat: no-repeat; /* 确保不重复 */
+    margin: auto; /* 使图片在页面中间 */
+  }
+}
+
 
 button {
   padding: 10px 20px;
@@ -53,7 +80,7 @@ button {
   border: none;
   background-color: #007bff;
   color: white;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-top: 20px;
 }
 

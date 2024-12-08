@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试烟花效果</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+      text-align: center;
+    }
+    #fireworks-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+    #trigger-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #FF5733;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>点击按钮触发烟花</h1>
+  <!-- 按钮 -->
+  <button id="trigger-button">点击放烟花</button>
+
+
+  <div id="fireworks-container"></div>
+
+  
+
+  <!-- 引入 Fireworks.js -->
+  <script src="/Y/fireworks/index.umd.js"></script>
+
+  <script src="ceshi.js"></script>
+
+  
+</body>
+</html>

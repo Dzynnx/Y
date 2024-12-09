@@ -1,0 +1,154 @@
+/* mobile.css - 适用于手机端 */
+
+/* 引入自定义字体 */
+@font-face {
+  font-family: 'HYTaoZaiZi'; /* 自定义字体名称 */
+  src: url('/Y/fonts/HYTaoZaiZi_J.woff2') format('woff2'),
+       url('/Y/fonts/HYTaoZaiZi_J.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 提高字体加载性能 */
+}
+
+body {
+    
+    font-family: 'HYTaoZaiZi', cursive; /* 设置可爱字体 */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+    
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Y/Picture/mobile2.png') no-repeat center center; /* 替换为你的图片路径 */
+    background-size: cover; /* 确保背景图片填满屏幕 */
+    z-index: -1; /* 背景在内容下面 */
+    background-attachment: fixed; /* 背景不随页面滚动 */
+  }
+  
+  .content {
+    position: absolute; /* 改为绝对定位 */
+    top: 30%; /* 调整文字距离顶部的距离 */
+    left: 5%; /* 调整文字距离左侧的距离 */
+    transform: translate(0, -50%); /* 移除水平居中的代码 */
+    z-index: 10; /* 确保内容在背景之上 */
+    color: #5a99c6; /* 字体颜色为白色，确保可见 */
+    max-width: 600px; /* 限制文字宽度 */
+    text-align: left; /* 将文字左对齐 */
+    padding: 20px; /* 给文字增加一些内边距 */
+    border-radius: 10px; /* 可选：圆角边框 */
+    font-size: 18px; /* 字体较小 */
+    color: #37a369; /* 字体颜色 */
+  }
+  
+  /* 针对小于 1024px 的设备调整 */
+  @media screen and (max-width: 1023px) {
+    .content {
+      font-size: 15px; /* 调整手机端的字体大小 */
+      left: 10%; /* 调整左侧位置 */
+      top: 85%; /* 调整顶部位置 */
+    }
+  }
+  
+
+ /* 蝴蝶样式 */
+.butterfly {
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background: url('/Y/Picture/lu.png') no-repeat center center;
+  background-size: contain; /* 确保蝴蝶图标的大小合适 */
+  z-index: 1; /* 蝴蝶在背景图和其他内容之间 */
+}
+
+
+/* 蝴蝶飞行动画 */
+@media (max-width: 767px) {  /* 适应小屏设备（如6.7英寸手机） */
+  .butterfly {
+    animation: fly 10s infinite ease-in-out;  /* 缩短动画时长，让蝴蝶更快速 */
+  }
+
+  @keyframes fly {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      left: -80px; /* 从屏幕左侧外开始 */
+    }
+    25% {
+      transform: translate(180px, -40px) rotate(45deg);  /* 缩小蝴蝶移动范围 */
+    }
+    50% {
+      transform: translate(30px, 0) rotate(90deg);
+    }
+    75% {
+      transform: translate(20px, 4px) rotate(135deg);
+    }
+    100% {
+      transform: translate(0, 8px) rotate(180deg);
+    }
+  }
+}
+
+/*按钮*/
+.back-button {
+  font-family: 'HYTaoZaiZi', cursive; /* 确保按钮使用自定义字体 */
+  background: linear-gradient(45deg, #37a369, #2e8b57);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease, border-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.back-button:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.back-button:hover {
+  background: linear-gradient(45deg, #2e8b57, #276749);
+  border-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+/*烟花按钮字体美化*/
+#trigger-button {
+  font-family: 'HYTaoZaiZi'; /* 自定义字体名称 */
+  padding: 10px 20px;
+  font-size: 10px;
+  cursor: pointer;
+  background-color: #5e99c7;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  margin-top: 1px;
+}

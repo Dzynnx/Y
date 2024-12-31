@@ -1,0 +1,37 @@
+/* time.css 文件 */
+.countdown {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fdf6e3;
+    color: #333;
+    border: 2px solid #ff9800;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+    position: fixed; /* 固定位置 */
+    bottom: 630px; /* 距离页面底部 20px，可以调整 */
+    left: 50%; /* 居中对齐 */
+    transform: translateX(-50%); /* 修正居中 */
+    z-index: 9999; /* 确保倒计时模块在最上方 */
+}
+.countdown h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ff5722;
+}
+.countdown p {
+    margin: 10px 0 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#time-container {
+    margin-top: 50px; /* 设置容器与顶部的距离 */
+    margin-bottom: 50px; /* 如果需要与底部保持距离 */
+    text-align: center; /* 居中对齐 */
+}

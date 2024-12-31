@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新颖花蕾</title>
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1024px)">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 1023px)">
+
+  
+  
+<body>
+     <!-- 公告 -->
+     <div class="announcement">
+      📢 永远热爱和真诚，要慢慢进步呀！
+    </div>
+
+  <div class="background"></div>
+  <main class="content">
+    <h1>欢迎来到我的个人博客</h1><!-- 欢迎来到我的个人博客 -->
+    <!-- 进入主页按钮 -->
+    <button id="enter-btn">点击进入主页</button>
+  </main>
+
+
+    <!-- 动态字幕 -->
+    <header class="scroll-header">
+    <div id="scrollTextContainer" class="scroll-text-container left">
+      <p id="scrollText" class="scroll-text">年少时遇到太惊艳的人终会困其一生
+      </p>
+
+      <div id="scrollTextContainer" class="scroll-text-container right">
+        <p id="scrollText" class="scroll-text">赤道的温度从未融化乞力马扎罗山的雪
+        </p>
+    </header>
+
+    <!-- 蝴蝶元素 -->
+    <div class="butterfly"></div>
+
+  
+  <!-- 引入 JavaScript 文件 -->
+  <script src="script.js"></script>
+
+
+  <!-- 跨年倒计时模块 -->
+  <div id="time-container"></div>
+  <script>
+    async function loadCountdown() {
+      try {
+        const response = await fetch('./time.html'); // 加载 time.html
+        const html = await response.text(); // 解析为文本
+        console.log('time.html 加载成功！');
+        document.getElementById('time-container').innerHTML = html; // 插入内容
+  
+        // 手动加载 time.js 脚本
+        const script = document.createElement('script');
+        script.src = './time.js';
+        script.onload = () => {
+          console.log('time.js 已成功加载并执行！');
+        };
+        document.body.appendChild(script);
+      } catch (error) {
+        console.error('time.html 加载失败：', error);
+      }
+    }
+  
+    loadCountdown();
+  </script>
+
+<!-- 跨年倒计时模块 -->
+  
+  
+
+  
+
+
+
+</body>
+</html>

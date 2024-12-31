@@ -1,0 +1,176 @@
+/* desktop.css - 适用于电脑端 */
+body {
+    font-family: 'Comic Sans MS', cursive; /* 设置可爱字体 */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Y/Picture/desktop.png') no-repeat center center; /* 替换为你的图片路径 */
+    background-size: cover; /* 确保背景图片填满屏幕 */
+    z-index: -1; /* 背景在内容下面 */
+    background-attachment: fixed; /* 背景固定不随页面滚动 */
+    
+  }
+  
+  .content {
+    position: fixed; /* 改为绝对定位 */
+    top: 11%; /* 调整文字距离顶部的距离 */
+    left: 10%; /* 调整文字距离左侧的距离 */
+    transform: translate(0, -50%); /* 移除水平居中的代码 */
+    z-index: 100; /* 确保内容在背景之上 */
+    color: #5a99c6; /* 字体颜色为白色，确保可见 */
+    max-width: 600px; /* 限制文字宽度 */
+    text-align: left; /* 将文字左对齐 */
+    padding: 30px; /* 给文字增加一些内边距 */
+    border-radius: 20px; /* 可选：圆角边框 */
+    font-size: 11px; /* 调整字体大小 */
+    color: #297891; /* 字体颜色 */
+  }
+  
+  /* 针对大于 1024px 的设备调整 */
+  @media screen and (min-width: 1024px) {
+    .content {
+      font-size: 20px; /* 电脑端字体稍微大一些 */
+      left: 5%; /* 调整文字位置 */
+      top: 50%; /* 调整文字在页面中的位置 */
+    }
+  }
+  /* 滚动文字容器样式 */
+.scroll-text-container {
+  position: fixed;
+  width: 100px; /* 容器宽度 */
+  height: 100%; /* 高度占满屏幕 */
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+  white-space: nowrap; /* 防止换行 */
+}
+
+
+/* 左侧滚动容器 */
+.scroll-text-container.left {
+  top: 0;
+  left: 0; /* 固定在左侧 */
+}
+
+/* 右侧滚动容器 */
+.scroll-text-container.right {
+  top: 0;
+  right: 0; /* 固定在右侧 */
+}
+
+/* 滚动文字样式 */
+.scroll-text {
+  font-size: 28px;
+  color: #308a6f;
+  font-weight: bold;
+  text-align: center;
+  writing-mode: vertical-rl; /* 设置文字垂直书写 */
+  transform: rotate(180deg); /* 垂直方向反转文字 */
+  animation: scrollVertical 10s linear infinite; /* 垂直滚动动画 */
+  text-shadow: 
+      0 0 5px #2c5495, 
+      0 0 10px #34926c, 
+      0 0 15px #9e1a1e, 
+      0 0 20px #215746, 
+      0 0 25px #911026, 
+      0 0 28px #a8441c; /* 荧光效果 */
+}
+
+
+/* 垂直滚动动画 */
+@keyframes scrollVertical {
+  from {
+    transform: translateY(150%); /* 从容器底部开始 */
+  }
+  to {
+    transform: translateY(-100%); /* 滚动到顶部 */
+  }
+}
+
+
+/* 为按钮添加美化效果 */
+#enter-btn {
+  background: linear-gradient(135deg, #ff7b7b, #ff99cc); /* 渐变背景颜色 */
+  color: white; /* 按钮文字颜色 */
+  font-size: 18px; /* 字体大小 */
+  padding: 15px 30px; /* 内边距，让按钮更大 */
+  border: none; /* 去掉默认边框 */
+  border-radius: 25px; /* 圆角效果 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 按钮阴影效果 */
+  cursor: pointer; /* 鼠标悬停时为指针 */
+  transition: all 0.3s ease; /* 设置过渡效果 */
+}
+
+/* 鼠标悬停时的效果 */
+#enter-btn:hover {
+  background: linear-gradient(135deg, #308d55, #237730); /* 悬停时改变渐变颜色 */
+  transform: translateY(-5px); /* 按钮上移，增强点击感 */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* 增加阴影效果 */
+}
+
+/* 鼠标按下时的效果 */
+#enter-btn:active {
+  transform: translateY(2px); /* 按下时按钮稍微下沉 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 按钮按下时阴影变小 */
+}
+
+
+/* 公告区样式 */
+.announcement {
+  position: fixed;
+  font-family: 'Pacifico', cursive; /* 使用可爱的字体 */
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 8px;
+  margin: 520px auto;
+  width: 95%;
+  z-index: 5
+  
+}
+
+
+
+/* 蝴蝶样式 */
+.butterfly {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: url('/Y/Picture/hudie.png') no-repeat center center;
+  background-size: contain; /* 确保蝴蝶图标的大小合适 */
+  z-index: 1; /* 蝴蝶在背景图和其他内容之间 */
+}
+
+/* 电脑端样式 */
+@media (min-width: 1024px) {  /* 适应大屏设备（如电脑） */
+  .butterfly {
+    animation: fly-desktop 100s infinite ease-in-out;  /* 增加动画时长，让蝴蝶飞行更慢 */
+  }
+
+  @keyframes fly-desktop {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(100px, -70px) rotate(45deg);  /* 扩大蝴蝶移动范围 */
+    }
+    50% {
+      transform: translate(20px, 0) rotate(90deg);
+    }
+    75% {
+      transform: translate(15px, 80px) rotate(135deg);
+    }
+    100% {
+      transform: translate(0, 20px) rotate(180deg);
+    }
+  }
+}

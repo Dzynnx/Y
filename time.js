@@ -7,7 +7,7 @@ function startCountdown() {
     return;
   }
 
-  const targetYear = 2025; // 设置目标年份
+  const targetYear = 2099; // 设置目标年份
   const newYearTime = new Date(`January 1, ${targetYear} 00:00:00`); // 设置目标时间
 
   function updateCountdown() {
